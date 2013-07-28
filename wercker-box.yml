@@ -1,0 +1,92 @@
+name: php
+version: 0.0.1
+inherits: wercker/ubuntu12.04-webessentials@0.0.3
+type : main
+platform : ubuntu@12.04
+description : hiphop-php
+keywords:
+  - php
+  - facebook
+  - hiphop-php
+packages :
+  - hiphop-php 2.10
+script : |
+  echo "deb http://dl.hiphop-php.com/ubuntu precise main" | sudo tee /etc/apt/sources.list
+  echo "deb http://archive.ubuntu.com/ubuntu precise main universe" | sudo tee /etc/apt/sources.list
+
+  sudo apt-get update
+  sudo apt-get install hiphop-php
+
+  # sudo chmod +x ./s3-put
+  # sudo chmod +x ./s3-common-functions
+  # sudo chmod +x ./php-build.sh
+
+  # # Add eports to profile, rc didn't work
+  # echo 'export PATH="/usr/local/bin:$PATH"' >> $HOME/.bash_profile
+
+  # # Add repository that contains php packages
+  # sudo add-apt-repository ppa:ondrej/php5 -y
+  # sudo apt-get update
+
+  # # Needed to build PHP with php-build
+  # sudo apt-get build-dep php5-cli
+  # sudo apt-get install libreadline-dev
+  # sudo apt-get install re2c
+  # sudo apt-get install flex
+  # sudo apt-get install bison
+
+  # # Install php-build
+  # git clone https://github.com/pjvds/php-build.git
+  # sudo ./php-build/install.sh
+  # rm -rf ./php-build
+  # sudo chown -R ubuntu $HOME
+  # sudo chown -R ubuntu /usr/local/share/php-build
+  # export PHP_BUILD_VERSIONS_DIR="$HOME/.phpenv/versions"
+
+  # # Validate php-build
+  # php-build --version
+
+  # # Intall php-env
+  # git clone https://github.com/CHH/phpenv.git
+  # sudo ./phpenv/bin/phpenv-install.sh
+  # echo 'export PATH="/home/ubuntu/.phpenv/bin:$PATH"' >> $HOME/.bash_profile
+  # echo 'eval "$(phpenv init -)"' >> $HOME/.bash_profile
+  # rm -rf ./phpenv
+  # sudo chown -R ubuntu $HOME
+  # source $HOME/.bash_profile
+
+  # # Validate phpenv
+  # phpenv --version
+
+  # # Build PHP versions
+  # php-build -i development --pear 5.3.26 $HOME/.phpenv/versions/5.3 --verbose
+  # sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.3/etc/php.ini
+
+  # php-build -i development --pear 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
+  # sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.4/etc/php.ini
+
+  # php-build -i development --pear 5.5.0 $HOME/.phpenv/versions/5.5 --verbose
+  # sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.5/etc/php.ini
+
+  # # Activate php 5.4
+  # phpenv rehash
+  # phpenv versions
+  # phpenv global 5.4
+  # php --version
+
+  # # Install composer
+  # curl -sS https://getcomposer.org/installer | php
+  # sudo mv composer.phar /usr/local/bin/composer
+  # sudo chmod +x /usr/local/bin/composer
+
+  # # Install PHPUnit
+  # wget http://pear.phpunit.de/get/phpunit.phar
+  # sudo mv phpunit.phar /usr/local/bin/phpunit
+  # sudo chmod +x /usr/local/bin/phpunit
+
+  # # Install atoum
+  # wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
+  # chmod +x mageekguy.atoum.phar
+  # sudo mv mageekguy.atoum.phar /usr/local/bin/atoum
+  # sudo chmod +x /usr/local/bin/atoum
+
