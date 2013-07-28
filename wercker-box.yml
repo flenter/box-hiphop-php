@@ -11,8 +11,8 @@ keywords:
 packages :
   - hiphop-php 2.10
 script : |
-  echo "deb http://dl.hiphop-php.com/ubuntu precise main" | sudo tee /etc/apt/sources.list
-  echo "deb http://archive.ubuntu.com/ubuntu precise main universe" | sudo tee /etc/apt/sources.list
+  echo "deb http://dl.hiphop-php.com/ubuntu precise main" | sudo tee -a /etc/apt/sources.list
+  echo "deb http://archive.ubuntu.com/ubuntu precise main universe" | sudo tee -a /etc/apt/sources.list
 
   sudo apt-get update
   sudo apt-get install hiphop-php
