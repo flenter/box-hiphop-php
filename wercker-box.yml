@@ -74,10 +74,10 @@ script : |
   # phpenv global 5.4
   # php --version
 
-  # Install composer
-  curl -sS https://getcomposer.org/installer | hhvm
-  sudo mv composer.phar /usr/local/bin/composer
-  sudo chmod +x /usr/local/bin/composer
+  # # Install composer
+  # curl -sS https://getcomposer.org/installer | hhvm
+  # sudo mv composer.phar /usr/local/bin/composer
+  # sudo chmod +x /usr/local/bin/composer
 
   # # Install PHPUnit
   wget http://pear.phpunit.de/get/phpunit.phar
